@@ -7,7 +7,7 @@ public class Monografia extends Item {
   }
 
   @Override
-  public int multaPorAtraso(int diasAtrasados){
-    return 4*diasAtrasados;
+  public void setPenalidadeDeAtraso(int diasAtrasados){
+    super.penalidadeDeAtraso = (4 * diasAtrasados);
   }
 }

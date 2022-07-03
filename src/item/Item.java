@@ -1,4 +1,5 @@
 package item;
+import java.util.ArrayList;
 import java.util.List;
 
 import sistema.Emprestimo;
@@ -10,11 +11,13 @@ public class Item {
   private String nome;
   private String autores;
   private int ano;
-  private double penalidadeDeAtraso;
+  protected double penalidadeDeAtraso;
   private double tempoReserva;
   private List<Emprestimo> emprestimos;
   private List<Reserva> reservas;
   
+  public Item(){}
+
   public Item(int id, String nome, String autores, int ano){
     this.id = id;
     this.nome = nome;
@@ -54,6 +57,22 @@ public class Item {
     this.ano = ano;
   }
 
+  public ArrayList<Emprestimo> getListaEmprestimos(){
+    return (ArrayList<Emprestimo>) emprestimos;
+  }
+
+  public void setListaEmprestimos(Emprestimo Emprestimo){
+    this.emprestimos.add(Emprestimo);
+  }
+
+  public ArrayList<Reserva> getListaReservas(){
+    return (ArrayList<Reserva>) reservas;
+  }
+
+  public void setListaReservas(Reserva reserva){
+    this.reservas.add(reserva);
+  }
+  
   public String tipoDeItem(){
     if(id == 1){
       return "Livro";
@@ -67,15 +86,26 @@ public class Item {
     return "Periódico";
   }
 
-  public boolean estaEmprestado(){
-    return false;
+  public String estaEmprestado(){
+    for(Emprestimo i:emprestimos){
+      if(this.id == i.getItem().id){
+        return "Item emprestado";
+      }
+    }
+    return "Item no acervo";
   }
 
-  public boolean estaReservado(){
-    return false;
+  public String estaReservado(){
+    for(Reserva i:reservas){
+      if(this.id == i.getItem().id){
+        return "Item reservado";
+      }
+    }
+    return "Sem revervas";
   }
 
-  public int multaPorAtraso(int diasAtrasados){
-    return diasAtrasados;
+  public void setPenalidadeDeAtraso(int diasAtrasados){
+    this.penalidadeDeAtraso = diasAtrasados;
   }
 }
+

@@ -7,7 +7,7 @@ public class Midia extends Item {
   }
 
   @Override
-  public int multaPorAtraso(int diasAtrasados){
-    return 2*diasAtrasados;
+  public void setPenalidadeDeAtraso(int diasAtrasados){
+    super.penalidadeDeAtraso = (2 * diasAtrasados);
   }
 }

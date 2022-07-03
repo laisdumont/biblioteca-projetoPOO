@@ -42,11 +42,11 @@ public class Biblioteca {
     this.usuarios.add(usuario);
   }
 
-  public ArrayList<Item> getListaitems(){
+  public ArrayList<Item> getListaItens(){
     return (ArrayList<Item>) itens;
   }
 
-  public void setListaItems(Item item){
+  public void setListaItens(Item item){
     this.itens.add(item);
   }
 }
