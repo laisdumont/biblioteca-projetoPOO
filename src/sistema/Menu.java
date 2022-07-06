@@ -134,15 +134,16 @@ public class Menu {
   }
 
   public void menuUsuario(){
+
     int numero;
-    
-    System.out.printf("| 2 - Reservas                   |\n");
-    System.out.printf("| 1 - Empréstimos                |\n");
-    System.out.printf("| 4 - Pena por atraso            |\n");
+    System.out.printf("| Nome: %s.\n");
+    System.out.printf("| Pena por atraso :\n\n");
     System.out.printf("---------- Menu Usuário ----------\n");
     System.out.printf("| 1 - Acervo                     |\n");
     System.out.printf("| 2 - Reservar                   |\n");
-    System.out.printf("| 3 - Voltar ao menu inicial     |\n");
+    System.out.printf("| 3 - Livros emprestados         |\n");
+    System.out.printf("| 4 - Livros reservados          |");
+    System.out.printf("| 5 - Voltar ao menu inicial     |\n");
     System.out.printf("----------------------------------\n");
 
     Scanner entrada = new Scanner(System.in);
@@ -205,7 +206,7 @@ public class Menu {
 
     System.out.printf("---------------------- Emprestimos ---------------------\n");
     System.out.printf("--------------------------------------------------------\n");
-    for (Emprestimo i : itens.getListaEmprestimos()) {
+    for (Emprestimo i : itens.getEmprestimos()) {
       System.out.printf("| Tipo: %s", i.getItem().tipoDeItem());
       System.out.printf("| Nome: %s", i.getItem().getNome());
       System.out.printf("| Autores: %s", i.getItem().getAutores());
@@ -219,7 +220,7 @@ public class Menu {
 
     System.out.printf("----------------------- Reservas -----------------------\n");
     System.out.printf("--------------------------------------------------------\n");
-    for (Reserva i : itens.getListaReservas()) {
+    for (Reserva i : itens.getReservas()) {
       System.out.printf("| Tipo: %s", i.getItem().tipoDeItem());
       System.out.printf("| Nome: %s", i.getItem().getNome());
       System.out.printf("| Autores: %s", i.getItem().getAutores());

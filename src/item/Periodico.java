@@ -7,7 +7,7 @@ public class Periodico extends Item {
   }
 
   @Override
-  public void setPenalidadeDeAtraso(int diasAtrasados){
-    super.penalidadeDeAtraso = (5 * diasAtrasados);
+  public void setPenalidadeDeAtraso(){
+    super.penalidadeDeAtraso = 10;
   }
 }

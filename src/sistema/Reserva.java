@@ -15,4 +15,20 @@ public class Reserva {
   public void setItem(Item item){
     this.item = item;
   }
+
+  public Usuario getUsuario(){
+    return this.usuario;
+  }
+
+  public void setUsuario(Usuario usuario){
+    this.usuario = usuario;
+  }
+
+  public boolean getStatus(){
+    return this.status;
+  }
+
+  public void setStatus(boolean status){
+    this.status = status;
+  }
 }

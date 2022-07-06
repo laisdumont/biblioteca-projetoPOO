@@ -7,7 +7,7 @@ public class Livro extends Item {
   }
 
   @Override
-  public void setPenalidadeDeAtraso(int diasAtrasados){
-    super.penalidadeDeAtraso = (3 * diasAtrasados);
+  public void setPenalidadeDeAtraso(){
+    super.penalidadeDeAtraso = 5;
   }
 }

@@ -1,6 +1,5 @@
 package item;
 import java.util.ArrayList;
-import java.util.List;
 
 import sistema.Emprestimo;
 import sistema.Reserva;
@@ -11,10 +10,10 @@ public class Item {
   private String nome;
   private String autores;
   private int ano;
-  protected double penalidadeDeAtraso;
-  private double tempoReserva;
-  private List<Emprestimo> emprestimos;
-  private List<Reserva> reservas;
+  protected int penalidadeDeAtraso;
+  private ArrayList<Integer> tempoReserva;
+  private ArrayList<Emprestimo> emprestimos = new ArrayList<>();
+  private ArrayList<Reserva> reservas = new ArrayList<>();
   
   public Item(){}
 
@@ -57,19 +56,27 @@ public class Item {
     this.ano = ano;
   }
 
-  public ArrayList<Emprestimo> getListaEmprestimos(){
+  public ArrayList<Integer> getTempoReserva(){
+    return this.tempoReserva;
+  }
+
+  public void setTempoReserva(ArrayList<Integer> tempoReserva){
+    this.tempoReserva = tempoReserva;
+  }
+
+  public ArrayList<Emprestimo> getEmprestimos(){
     return (ArrayList<Emprestimo>) emprestimos;
   }
 
-  public void setListaEmprestimos(Emprestimo Emprestimo){
-    this.emprestimos.add(Emprestimo);
+  public void setEmprestimos(Emprestimo emprestimo){
+    this.emprestimos.add(emprestimo);
   }
 
-  public ArrayList<Reserva> getListaReservas(){
-    return (ArrayList<Reserva>) reservas;
+  public ArrayList<Reserva> getReservas(){
+    return (ArrayList<Reserva>) this.reservas;
   }
 
-  public void setListaReservas(Reserva reserva){
+  public void setReservas(Reserva reserva){
     this.reservas.add(reserva);
   }
   
@@ -96,7 +103,7 @@ public class Item {
   }
 
   public String estaReservado(){
-    for(Reserva i:reservas){
+    for(Reserva i: reservas){
       if(this.id == i.getItem().id){
         return "Item reservado";
       }
@@ -104,8 +111,12 @@ public class Item {
     return "Sem revervas";
   }
 
-  public void setPenalidadeDeAtraso(int diasAtrasados){
-    this.penalidadeDeAtraso = diasAtrasados;
+  public int getPenalidadeDeAtraso(){
+    return this.penalidadeDeAtraso;
+  }
+
+  public void setPenalidadeDeAtraso(){
+    this.penalidadeDeAtraso = 1;
   }
 }
 
